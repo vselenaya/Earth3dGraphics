@@ -503,7 +503,7 @@ int main() try
         glm::vec3 sun_direction;  // получаем направление на Солнце
         float sun_speed = 0.25;
         glm::mat4 rotation_matrix = glm::rotate(glm::mat4(1.0f), glm::radians(23.5f), glm::vec3(1.0f, 0.0f, 0.0f));  // матрица поворота на 23.5 градуса вокруг оси x
-        sun_direction = glm::normalize(glm::vec3(rotation_matrix * glm::vec4(std::sin(time * sun_speed), 0.f, std::cos(time * sun_speed), 1.0)));  // направление на Солнце (оно вращается в плоскости xz на высоте = 0)
+        sun_direction = glm::normalize(glm::vec3(rotation_matrix * glm::vec4(std::sin(time * sun_speed), 0.f, std::cos(time * sun_speed), 1.0)));  // направление на Солнце (ось вращения Земли наклонена к плоскости эклиптики на 23.5 градуса -> со стороны Земли выглядит так, что Солнце вращается под таким углом вокруг Земли -> поворачиваем солнце в плоскости xz и наклоняем затем на 23.5 градуса)
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
